@@ -18,8 +18,8 @@ class ChatController extends AbstractController
     {
         return $this->render('chat/index.html.twig', [
             'config' => [
-                'topic' => '1e9',
-                'publishRoute' => $this->generateUrl('publisher', ['topic' => '1e9'])
+                'topic' => 'chat',
+                'publishRoute' => $this->generateUrl('publisher', ['topic' => 'chat'])
             ]
         ]);
     }
