@@ -19,6 +19,7 @@
 {% endblock %}
 
 {% block javascripts %}
+    {{ parent() }}
 <script type="application/json" id="config">
     {{ config|json_encode()|raw }}
 </script>
@@ -28,7 +29,11 @@
     const subscribeURL = new URL('http://localhost:9090/.well-known/mercure');
     subscribeURL.searchParams.append('topic', topic);
 
-    const es = new EventSource(subscribeURL);
+    const es = new EventSourcePolyfill(subscribeURL, {
+        headers: {
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjdXJlIjp7InN1YnNjcmliZSI6WyIqIl19fQ.ORJnUIVffZWH4WoZZhcZg74WWlh9f5TVYiaNmUE4u2o',
+        }
+    });
     let ul = null;
     es.onmessage = ({data}) => {
         const {username, message} = JSON.parse(data)
