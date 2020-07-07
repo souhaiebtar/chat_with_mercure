@@ -1,20 +1,23 @@
 ### How to run 
 
-start by cloning the repo than
+1. start by cloning the repo than install php dependencies
+    ```BASH
+    composer install
+    ```
 
-1. Start mercure using this command (docker used):
+2. Start mercure using this command (docker used):
     ```BASH
     docker run -e JWT_KEY='!ChangeMe!' \
      -e CORS_ALLOWED_ORIGINS="*" -e PUBLISH_ALLOWED_ORIGINS='*' \
      -e DEBUG=1 -p 9090:80 dunglas/mercure:v0.10.2
     ```
 
-2. Run the symfony 4 app using:
+3. Run the symfony 4 app using:
     ```BASH
     php -S localhost:8000 -t public
     ``` 
 
-3. Open the chat url `http://localhost:8000/chat` in two different browsers
+4. Open the chat url `http://localhost:8000/chat` in two different browsers
 
 ## original code [1][1]
 
