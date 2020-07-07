@@ -19,7 +19,7 @@
     <script>
         let ul = null;
         const hubUrl = new URL('http://localhost:9090/.well-known/mercure');
-        hubUrl.searchParams.append('topic', '1e9');
+        hubUrl.searchParams.append('topic', 'chat');
 
         const lastEventId = localStorage.getItem('lastEventId');
         if (lastEventId != null){
@@ -44,7 +44,7 @@
             }
 
             const li = document.createElement('li');
-            li.append(document.createTextNode(data.headline));
+            li.append(document.createTextNode(data.username));
             ul.append(li);
         }
     </script>{% endblock %}

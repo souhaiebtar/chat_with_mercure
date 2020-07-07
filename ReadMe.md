@@ -17,7 +17,8 @@
     php -S localhost:8000 -t public
     ``` 
 
-4. Open the chat url `http://localhost:8000/chat` in two different browsers
+> N.B: Open the chat url `http://localhost:8000/chat` in two different browsers, also you can open http://localhost:8000/client to view all old message
+
 
 ## original code [1][1]
 
